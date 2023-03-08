@@ -30,7 +30,7 @@
                                     {{ form.password }}
                                 </div>
                                 <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                    <a class="small" href="#">Reactivate token</a>
+                                    <a class="small" href="{% url 'users:reactivation_sent'  %}">Reactivate token</a>
                                     <input class="btn btn-primary" type="submit" value="Login">
                                 </div>
                             </form>

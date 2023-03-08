@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
+from django.core.exceptions import ObjectDoesNotExist
 
 
 class UserLoginForm(AuthenticationForm):
@@ -31,3 +32,17 @@ class UserRegistrationForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('first_name', 'last_name', 'username', 'email', 'password1', 'password2')
+
+
+class ReactivationForm(forms.Form):
+    email = forms.EmailField(label='Email',
+                             required=True,
+                             widget=forms.EmailInput(attrs={'class': 'form-control'}))
+
+    def clean_email(self):
+        email = self.cleaned_data['email']
+        try:
+            user = User.objects.get(email=email)
+        except ObjectDoesNotExist:
+            raise forms.ValidationError('User with this email does\'t exist')
+        return email

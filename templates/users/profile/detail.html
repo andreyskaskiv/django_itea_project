@@ -18,7 +18,7 @@
                 style="width: 150px; z-index: 1">
               <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark" id="btnEditProfile"
                 style="z-index: 1;">
-                <a href="{% url 'accounts:profile_update' username=profile.user.username %}" class="text-decoration-none text-dark">
+                <a href="{% url 'users:profile_update' username=profile.user.username %}" class="text-decoration-none text-dark">
                 Edit profile
                 </a>
               </button>
