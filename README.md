@@ -1,5 +1,7 @@
 # **Django Blog Project**
 
+Django==4.1.7
+
 ### What is implemented in this application:
 
 <a name="top"></a>
