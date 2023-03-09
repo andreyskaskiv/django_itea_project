@@ -122,20 +122,20 @@ QuerySet
    https://docs.djangoproject.com/en/4.1/ref/models/querysets/
 
    ```pycon
-   from products.models import ProductCategory
-   category = ProductCategory.objects.get(id=1)
+   from blog.models import Post
+   category = Post.objects.get(id=1)
    category
    <ProductCategory: Clothes>
    ```
    
    ```pycon
-   ProductCategory.objects.all()
-   <QuerySet [<ProductCategory: Clothes>, <ProductCategory: New>, <ProductCategory: Shoes>, <ProductCategory: Accessories>, <ProductCategory: Present>]>
+   Post.objects.all()
+   <QuerySet [........]>
    ```
    
    ```pycon
-   ProductCategory.objects.filter(description=None)
-   <QuerySet []>
+   Post.objects.filter(publish=None)
+   <QuerySet [.......]>
    ```
 
 Fixture
